@@ -70,6 +70,7 @@ if flagDebug == True:
     print eigenvalues
     print eigenvectors
 
+# 调整特征值分解的顺序
 Contribution = numpy.ndarray(shape=(NumCol_DataTrain), dtype=float)
 Sum_lambda = numpy.sum(eigenvalues)
 for x in range(0,NumCol_DataTrain-1):
@@ -87,11 +88,12 @@ if flagDebug == True:
     print Sum_Contribution
 
 # 确定主元个数
-k = 1;
+k = 1
 while Sum_Contribution[k-1] < flagSumContr:
     k += 1
 if flagDebug == True:
     print "当前主元个数为",k,"累计贡献率为",Sum_Contribution[k-1]
+
 
 
 #
